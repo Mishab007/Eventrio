@@ -1,0 +1,212 @@
+import { useState, useEffect } from 'react';
+import { useProducts } from '@/context/ProductContext.jsx';
+import ProductCard from '@/components/ProductCard.jsx';
+import ProductQuickView from '@/components/ProductQuickView.jsx';
+
+const NewArrivals = () => {
+  const { products, getNewArrivals } = useProducts();
+  const [newArrivalProducts, setNewArrivalProducts] = useState([]);
+  const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [sortOrder, setSortOrder] = useState('newest');
+  const [filterOptions, setFilterOptions] = useState({
+    category: 'all',
+    minPrice: '',
+    maxPrice: '',
+  });
+
+  // Load new arrival products
+  useEffect(() => {
+    const newArrivals = getNewArrivals(50); // Get up to 50 new arrivals
+    setNewArrivalProducts(newArrivals);
+  }, [products, getNewArrivals]);
+
+  // Filter and sort products
+  const filteredAndSortedProducts = () => {
+    let result = [...newArrivalProducts];
+
+    // Apply category filter
+    if (filterOptions.category !== 'all') {
+      result = result.filter(p => p.category === filterOptions.category);
+    }
+
+    // Apply price filters
+    if (filterOptions.minPrice) {
+      result = result.filter(p => p.price >= parseFloat(filterOptions.minPrice));
+    }
+    if (filterOptions.maxPrice) {
+      result = result.filter(p => p.price <= parseFloat(filterOptions.maxPrice));
+    }
+
+    // Apply sorting
+    result.sort((a, b) => {
+      if (sortOrder === 'price-asc') {
+        return a.price - b.price;
+      } else if (sortOrder === 'price-desc') {
+        return b.price - a.price;
+      } else if (sortOrder === 'rating') {
+        return (b.rating || 0) - (a.rating || 0);
+      } else {
+        // 'newest' or default sorting (by ID, newest first)
+        return b.id.localeCompare(a.id);
+      }
+    });
+
+    return result;
+  };
+
+  const handleQuickViewOpen = (product) => {
+    setSelectedProduct(product);
+    setIsQuickViewOpen(true);
+  };
+
+  const handleQuickViewClose = () => {
+    setSelectedProduct(null);
+    setIsQuickViewOpen(false);
+  };
+
+  const handleFilterChange = (e) => {
+    const { name, value } = e.target;
+    setFilterOptions(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const clearFilters = () => {
+    setFilterOptions({
+      category: 'all',
+      minPrice: '',
+      maxPrice: '',
+    });
+    setSortOrder('newest');
+  };
+
+  // Get unique categories for filter
+  const categories = ['all', ...new Set(newArrivalProducts.map(p => p.category))];
+
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold text-gray-800 mb-8 text-center">New Arrivals</h1>
+      
+      <div className="flex flex-col md:flex-row gap-8">
+        {/* Filters Sidebar */}
+        <div className="w-full md:w-1/4">
+          <div className="bg-white rounded-lg shadow-md p-6 sticky top-4">
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="text-xl font-bold text-gray-800">Filters</h2>
+              <button 
+                onClick={clearFilters}
+                className="text-sm text-blue-600 hover:text-blue-800"
+              >
+                Clear All
+              </button>
+            </div>
+
+            {/* Category Filter */}
+            <div className="mb-6">
+              <h3 className="font-semibold text-gray-700 mb-3">Category</h3>
+              <select
+                name="category"
+                value={filterOptions.category}
+                onChange={handleFilterChange}
+                className="w-full p-2 border border-gray-300 rounded-md"
+              >
+                {categories.map(category => (
+                  <option key={category} value={category}>
+                    {category === 'all' ? 'All Categories' : category.charAt(0).toUpperCase() + category.slice(1)}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Price Filter */}
+            <div className="mb-6">
+              <h3 className="font-semibold text-gray-700 mb-3">Price Range</h3>
+              <div className="space-y-2">
+                <div className="flex items-center">
+                  <input
+                    type="number"
+                    name="minPrice"
+                    placeholder="Min"
+                    value={filterOptions.minPrice}
+                    onChange={handleFilterChange}
+                    className="w-full p-2 border border-gray-300 rounded-md text-sm"
+                  />
+                </div>
+                <div className="flex items-center">
+                  <input
+                    type="number"
+                    name="maxPrice"
+                    placeholder="Max"
+                    value={filterOptions.maxPrice}
+                    onChange={handleFilterChange}
+                    className="w-full p-2 border border-gray-300 rounded-md text-sm"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Products Grid */}
+        <div className="w-full md:w-3/4">
+          {/* Sort Options */}
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 p-4 bg-white rounded-lg shadow-md">
+            <div className="mb-4 md:mb-0">
+              <p className="text-gray-600">{filteredAndSortedProducts().length} new products</p>
+            </div>
+            <div className="flex items-center">
+              <label htmlFor="sort" className="mr-2 text-gray-700">Sort by:</label>
+              <select
+                id="sort"
+                value={sortOrder}
+                onChange={(e) => setSortOrder(e.target.value)}
+                className="border border-gray-300 rounded-md p-2"
+              >
+                <option value="newest">Newest</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating">Customer Rating</option>
+              </select>
+            </div>
+          </div>
+
+          {/* Products Display */}
+          {filteredAndSortedProducts().length > 0 ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredAndSortedProducts().map((product) => (
+                <ProductCard 
+                  key={product.id} 
+                  product={product} 
+                  onQuickView={handleQuickViewOpen} 
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="bg-white rounded-lg shadow-md p-12 text-center">
+              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-16 h-16 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-gray-800 mb-2">No products found</h3>
+              <p className="text-gray-600 mb-4">
+                Try adjusting your filters to see more products.
+              </p>
+              <button 
+                onClick={clearFilters}
+                className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition"
+              >
+                Reset Filters
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Quick View Modal */}
+      {isQuickViewOpen && selectedProduct && (
+        <ProductQuickView product={selectedProduct} onClose={handleQuickViewClose} />
+      )}
+    </div>
+  );
+};
+
+export default NewArrivals;

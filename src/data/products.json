@@ -1,0 +1,168 @@
+[
+  {
+    "id": "1",
+    "name": "Classic Denim Jacket",
+    "description": "A timeless denim jacket, perfect for any season. Made from durable, high-quality denim with a comfortable fit.",
+    "description_long": "Our Classic Denim Jacket is an essential piece for every wardrobe. Crafted from premium, heavy-duty denim, it offers exceptional durability and comfort. Featuring a classic button-front closure, two chest pockets with flaps, and side-entry pockets. The versatile design makes it suitable for layering over a t-shirt or a hoodie, perfect for casual outings or adding a rugged touch to your look.",
+    "price": 79.99,
+    "category": "jackets",
+    "image": "/images/denim-jacket.jpg",
+    "images": [
+      "/images/denim-jacket.jpg",
+      "/images/denim-jacket-2.jpg",
+      "/images/denim-jacket-3.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "color": "blue",
+    "rating": 4.5,
+    "reviews": [
+      {"id": "r1", "author": "John D.", "rating": 5, "comment": "Great jacket, fits perfectly and looks amazing!"},
+      {"id": "r2", "author": "Jane S.", "rating": 4, "comment": "Good quality, a bit stiff at first but softens up."}
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Slim Fit Chinos",
+    "description": "Versatile slim-fit chinos that offer both style and comfort. Ideal for casual and semi-formal occasions.",
+    "description_long": "These Slim Fit Chinos are designed for the modern man, blending sharp style with ultimate comfort. Made from a soft, stretch cotton blend, they provide a tailored look without restricting movement. Features include a zip fly with button closure, belt loops, and functional front and back pockets. Perfect for dressing up with a button-down shirt or keeping it casual with a tee.",
+    "price": 49.99,
+    "category": "jeans",
+    "image": "/images/chinos.jpg",
+    "images": [
+      "/images/chinos.jpg",
+      "/images/chinos-2.jpg",
+      "/images/chinos-3.jpg"
+    ],
+    "sizes": ["28", "30", "32", "34", "36"],
+    "color": "khaki",
+    "rating": 4.2,
+    "reviews": [
+      {"id": "r3", "author": "Mike R.", "rating": 4, "comment": "Comfortable and stylish, good for work and casual wear."},
+      {"id": "r4", "author": "Sarah L.", "rating": 5, "comment": "My husband loves these, great fit!"}
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Organic Cotton T-Shirt",
+    "description": "Soft and breathable t-shirt made from 100% organic cotton. A wardrobe essential for everyday wear.",
+    "description_long": "Experience unparalleled comfort with our Organic Cotton T-Shirt. Made from 100% certified organic cotton, this tee is incredibly soft, breathable, and gentle on the skin. Its classic crew neck and short sleeve design make it a versatile base layer or a standalone piece. Available in a range of colors, it's an eco-friendly choice for your everyday wardrobe.",
+    "price": 24.99,
+    "category": "shirts",
+    "image": "/images/cotton-tshirt.jpg",
+    "images": [
+      "/images/cotton-tshirt.jpg",
+      "/images/cotton-tshirt-2.jpg",
+      "/images/cotton-tshirt-3.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "color": "white",
+    "rating": 4.8,
+    "reviews": [
+      {"id": "r5", "author": "Emily W.", "rating": 5, "comment": "Super soft and comfortable, my new favorite t-shirt."},
+      {"id": "r6", "author": "David P.", "rating": 5, "comment": "Excellent quality, holds up well after washing."}
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Leather Chelsea Boots",
+    "description": "Stylish and durable leather Chelsea boots. Perfect for adding a touch of sophistication to any outfit.",
+    "description_long": "Elevate your footwear collection with our Leather Chelsea Boots. Crafted from genuine leather, these boots feature elastic side panels and a pull tab for easy on-and-off. The sleek design and comfortable sole make them perfect for both formal and casual occasions. A timeless addition that pairs well with jeans or tailored trousers.",
+    "price": 129.99,
+    "category": "shoes",
+    "image": "/images/chelsea-boots.jpg",
+    "images": [
+      "/images/chelsea-boots.jpg",
+      "/images/chelsea-boots-2.jpg",
+      "/images/chelsea-boots-3.jpg"
+    ],
+    "sizes": ["7", "8", "9", "10", "11", "12"],
+    "color": "black",
+    "rating": 4.6,
+    "reviews": [
+      {"id": "r7", "author": "Chris M.", "rating": 5, "comment": "Fantastic boots, very comfortable and stylish."},
+      {"id": "r8", "author": "Olivia G.", "rating": 4, "comment": "Good quality leather, took a little breaking in."}
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Striped Button-Up Shirt",
+    "description": "A classic button-up shirt with a modern striped pattern. Made from a lightweight fabric for comfort.",
+    "description_long": "Our Striped Button-Up Shirt offers a fresh take on a classic. Made from a lightweight, breathable cotton blend, it's perfect for warmer days or layering. The subtle striped pattern adds a touch of sophistication, while the relaxed fit ensures all-day comfort. Ideal for both casual and smart-casual ensembles.",
+    "price": 59.99,
+    "category": "shirts",
+    "image": "/images/striped-shirt.jpg",
+    "images": [
+      "/images/striped-shirt.jpg",
+      "/images/striped-shirt-2.jpg",
+      "/images/striped-shirt-3.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "color": "blue",
+    "rating": 4.3,
+    "reviews": [
+      {"id": "r9", "author": "Daniel K.", "rating": 4, "comment": "Nice shirt, good for summer. Colors are vibrant."},
+      {"id": "r10", "author": "Sophia B.", "rating": 4, "comment": "Bought this for my brother, he likes it a lot."}
+    ]
+  },
+  {
+    "id": "6",
+    "name": "Distressed Slim Jeans",
+    "description": "Fashion-forward distressed slim-fit jeans with a comfortable stretch. Perfect for a casual, edgy look.",
+    "description_long": "Achieve an effortlessly cool look with our Distressed Slim Jeans. Crafted from a premium denim with a hint of stretch, these jeans offer a comfortable slim fit that moves with you. The carefully placed distressed details add a rebellious edge, making them perfect for casual wear. Pair with a graphic tee or a casual button-down.",
+    "price": 69.99,
+    "category": "jeans",
+    "image": "/images/distressed-jeans.jpg",
+    "images": [
+      "/images/distressed-jeans.jpg",
+      "/images/distressed-jeans-2.jpg",
+      "/images/distressed-jeans-3.jpg"
+    ],
+    "sizes": ["28", "30", "32", "34", "36"],
+    "color": "dark-wash",
+    "rating": 4.4,
+    "reviews": [
+      {"id": "r11", "author": "Alex H.", "rating": 5, "comment": "Love these jeans, perfect amount of distress and great fit."},
+      {"id": "r12", "author": "Chloe F.", "rating": 4, "comment": "Stylish, but wish they were a bit softer."}
+    ]
+  },
+  {
+    "id": "7",
+    "name": "Puffer Jacket",
+    "description": "Warm and lightweight puffer jacket, ideal for colder weather. Features a water-resistant outer shell.",
+    "description_long": "Stay warm and stylish with our Puffer Jacket. Designed for lightweight warmth, it features a durable, water-resistant outer shell and a cozy fill. The full-zip front, stand-up collar, and elasticized cuffs provide extra protection against the elements. Perfect for chilly commutes or outdoor adventures.",
+    "price": 99.99,
+    "category": "jackets",
+    "image": "/images/puffer-jacket.jpg",
+    "images": [
+      "/images/puffer-jacket.jpg",
+      "/images/puffer-jacket-2.jpg",
+      "/images/puffer-jacket-3.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "color": "black",
+    "rating": 4.7,
+    "reviews": [
+      {"id": "r13", "author": "Sam T.", "rating": 5, "comment": "Very warm and light, exactly what I needed."},      {"id": "r14", "author": "Laura K.", "rating": 4, "comment": "Good jacket, but the hood is a bit small."}
+    ]
+  },
+  {
+    "id": "8",
+    "name": "White Sneakers",
+    "description": "Clean and minimalist white sneakers, perfect for everyday wear. Comfortable and stylish.",
+    "description_long": "Our White Sneakers are the epitome of minimalist style and comfort. Crafted with a smooth, durable synthetic leather upper and a cushioned sole, they provide all-day comfort. The clean white design makes them incredibly versatile, pairing effortlessly with jeans, chinos, or shorts. A must-have for any casual wardrobe.",
+    "price": 89.99,
+    "category": "shoes",
+    "image": "/images/white-sneakers.jpg",
+    "images": [
+      "/images/white-sneakers.jpg",
+      "/images/white-sneakers-2.jpg",
+      "/images/white-sneakers-3.jpg"
+    ],
+    "sizes": ["7", "8", "9", "10", "11", "12"],
+    "color": "white",
+    "rating": 4.5,
+    "reviews": [
+      {"id": "r15", "author": "Kevin C.", "rating": 5, "comment": "Super comfortable and look great with everything."},      {"id": "r16", "author": "Megan D.", "rating": 4, "comment": "Stylish, but get dirty easily (as expected with white shoes)."}
+    ]
+  }
+]

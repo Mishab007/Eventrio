@@ -127,7 +127,7 @@ const Header = ({ searchTerm, onSearchChange }) => {
     <header className="bg-white shadow-md py-3 sm:py-4 px-4 sm:px-6 md:px-12 lg:px-24 flex flex-col md:flex-row justify-between items-center dark:bg-gray-900 dark:text-white relative sticky top-0 z-40"> {/* Added sticky positioning */}
       <div className="flex justify-between items-center w-full md:w-auto">
         <div className="text-xl sm:text-2xl font-bold text-gray-800 dark:text-white">
-          Fashion Hub
+          Mall of Men
         </div>
         
         {/* Mobile menu button */}

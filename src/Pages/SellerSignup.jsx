@@ -262,7 +262,7 @@ const PartnerSignup = () => {
       <div className="max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6 sm:p-8">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-gray-800">Become a Partner</h1>
-          <p className="text-gray-600 mt-2">Join Fashion Hub and start selling your products today!</p>
+          <p className="text-gray-600 mt-2">Join Mall of Men and start selling your products today!</p>
         </div>
 
         {renderProgressBar()}

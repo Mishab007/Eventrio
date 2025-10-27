@@ -4,7 +4,7 @@ const Footer = () => {
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {/* Column 1: About Us */}
         <div>
-          <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Fashion Hub</h3>
+          <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Mall of Men</h3>
           <p className="text-gray-400 dark:text-gray-500 text-sm sm:text-base">
             Your ultimate destination for the latest trends in men&apos;s clothing. Quality, style, and comfort delivered to your doorstep.
           </p>
@@ -46,7 +46,7 @@ const Footer = () => {
       </div>
 
       <div className="border-t border-gray-700 mt-6 sm:mt-8 pt-6 sm:pt-8 text-center text-gray-500 text-xs sm:text-sm">
-        &copy; {new Date().getFullYear()} Fashion Hub. All rights reserved.
+        &copy; {new Date().getFullYear()} Mall of Men. All rights reserved.
       </div>
     </footer>
   );

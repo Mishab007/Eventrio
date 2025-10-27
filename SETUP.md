@@ -1,4 +1,4 @@
-# Fashion Hub Setup Guide
+# Mall of Men Setup Guide
 
 ## Issues Fixed
 
